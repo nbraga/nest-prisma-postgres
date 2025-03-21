@@ -14,6 +14,21 @@ export class PrismaArticleRepository implements ArticleRepositoryProps {
 
   async findMany(): Promise<ArticleProps[]> {
     const articles = await prisma.article.findMany();
+
     return articles;
+  }
+
+  async findOne(articleId: number): Promise<ArticleProps | null> {
+    const article = await prisma.article.findFirst({
+      where: { id: articleId },
+    });
+
+    return article;
+  }
+
+  async delete(articleId: number): Promise<void> {
+    await prisma.article.delete({
+      where: { id: articleId },
+    });
   }
 }

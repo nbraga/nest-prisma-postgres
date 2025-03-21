@@ -14,4 +14,6 @@ export interface ArticleRepositoryProps {
   create(article: CreateArticleParams): Promise<void>;
 
   findMany(): Promise<ArticleProps[]>;
+
+  findOne(articleId: number): Promise<ArticleProps | null>;
 }

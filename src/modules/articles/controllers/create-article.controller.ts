@@ -11,8 +11,10 @@ import {
   CreateArticleDto,
   CreateArticleSchema,
 } from './dto/create-article.dto';
+import { ApiTags } from '@nestjs/swagger';
 
 @Controller('articles')
+@ApiTags('Articles')
 export class CreateArticleController {
   constructor(private createArticleService: CreateArticleService) {}
 

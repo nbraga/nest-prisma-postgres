@@ -1,19 +1,15 @@
 import { ServiceProps } from 'src/commom/interfaces/service-props';
+import { ArticleProps } from 'src/commom/repositories/interfaces/article-repository.interface';
 
-export type CreateArticleParams = {
-  title: string;
-  body: string;
-  published: boolean;
-  description?: string;
-};
+export type FindManyArticleParams = {};
 
-export type CreateArticleErrors = 'Article not found';
+export type FindManyArticleErrors = 'Articles not found';
 
-export type CreateArticleResponse = null;
+export type FindManyArticleResponse = ArticleProps[];
 
-export interface CreateArticleUseCase
+export interface FindManyArticleUseCase
   extends ServiceProps<
-    CreateArticleParams,
-    CreateArticleErrors,
-    CreateArticleResponse
+    FindManyArticleParams,
+    FindManyArticleErrors,
+    FindManyArticleResponse
   > {}
